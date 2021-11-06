@@ -1,0 +1,44 @@
+.bar{
+    width:200px;
+    height:60px;
+    font-size:17px;
+    margin-left: none !important;
+    
+}
+
+.hypercool{
+    margin: 2vw !important;
+}
+
+.smaller{
+    font-size: 2.5vw !important;
+    font-weight: 100;
+}
+
+.submitButton{
+    width:100px;
+    height:45px;
+    border:none;
+    margin: none !important;
+    background: rgb(235,235,235);
+}
+
+.saveNameButton{
+    width:200px;
+    height:30px;
+    border: none;
+    background: rgb(235,235,235);
+}
+
+.saveNameButton:hover{
+    background: rgb(215,215,215);
+}
+.submitButton:hover{
+    background: rgb(215,215,215);
+}
+
+.entireTaskBar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
