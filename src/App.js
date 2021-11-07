@@ -7,7 +7,7 @@ import {AllTasks} from "./taskStuff/allTasks"
 import Container from './whiteBoard/Container';
 
 var gamer;
-
+/*
 chrome.runtime.onMessage.addListener(
   function(request, sender, sendResponse) {
     gamer = request.greeting;
@@ -21,19 +21,38 @@ chrome.runtime.onMessage.addListener(
       sendResponse({farewell: "ff"});
   }
 );
+*/
 
 
+export class App extends React.Component{
+  constructor(props){
+    super(props);
 
-function App() {
-  return (
-    <div className="App">
-      {gamer}
-      <AllTasks />
-      {/*<AllTasks />*/}
-      <Whiteblack />
-    </div>
+    this.state = {
+      which : "tasks"
+    };
+  }
 
-  );
+  render(){
+    let toDisplay;
+    if(this.state.which == "tasks"){
+      toDisplay = <AllTasks />;
+    }
+    else{
+      toDisplay = <Whiteblack />;
+    }
+
+    return (
+      <div className="App">
+        <div className = "topBar">
+          <button onClick={() => {this.setState({"which" : "tasks"})}}>tasks</button>
+          <button onClick={() => {this.setState({"which" : "whiteBlack"})}}>whiteblack</button>
+        </div>
+        {gamer}
+
+        {toDisplay}
+      </div>
+
+    );
+  }
 }
-
-export default App;
