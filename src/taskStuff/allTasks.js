@@ -8,7 +8,7 @@ export class AllTasks extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            all : ["make money", "touch grass", "get good sleep"],
+            all : ["make money", "touch grass", "get good sleep", "finish this fucking hackathon"],
             finished : ["mac and cheese make it"],
             settingsActive : false,
             whichActive : -1

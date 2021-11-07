@@ -1,12 +1,14 @@
 .entire{
     display: flex;
     justify-content: center;
-    
+    align-items: baseline;
 }
 
 .holder{
     margin: 5vw;
-    width:25%;
+    width:30%;
+    background: rgb(235, 235, 235);
+    padding:2vw;
 }
 
 .addTask{
@@ -15,8 +17,4 @@
     background: rgb(255, 255, 255);
     border: none;
     margin-top: 2vw;
-}
-
-.addTask:hover{
-    background: rgb(215, 215, 215);
 }

@@ -112,7 +112,7 @@ export class FinishedTask extends React.Component{
                     <div className = "sideButtons">
                         <div>
                             <button onClick = {this.unFinishTask} className = "submitButton">
-                                finish task
+                                unfinish task
                             </button>
                         </div>
 
