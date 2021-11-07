@@ -2,6 +2,10 @@
 
 import './App.css';
 import React from 'react'
+import { Whiteblack } from './whiteblack/whiteblack';
+import {AllTasks} from "./taskStuff/allTasks"
+import Container from './whiteBoard/Container';
+
 var gamer;
 
 chrome.runtime.onMessage.addListener(
@@ -18,10 +22,15 @@ chrome.runtime.onMessage.addListener(
   }
 );
 
+
+
 function App() {
   return (
     <div className="App">
       {gamer}
+      <AllTasks />
+      {/*<AllTasks />*/}
+      <Whiteblack />
     </div>
 
   );
