@@ -8,6 +8,7 @@
     margin: 5vw;
     width:30%;
     background: rgb(235, 235, 235);
+    border: 1px solid rgba(0,0,0,0.3);
     padding:2vw;
 }
 

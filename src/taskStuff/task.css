@@ -9,9 +9,12 @@
 .hypercool{
     margin-top: 2vw;
     margin-bottom: 2vw;
-    background: rgb(255, 255, 245);
+    background: rgb(250, 250, 250);
     padding:0.5vw;
-    box-shadow: 5px 6px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 2px rgba(0,0,0,0.05), 
+                0 4px 4px rgba(0,0,0,0.05), 
+                0 8px 8px rgba(0,0,0,0.05);
+                
     border: 1px solid rgba(0,0,0,0.3);
 
 }
@@ -22,11 +25,13 @@
 }
 
 .submitButton{
-    width:100px;
+    width:130px;
     height:45px;
     border:none;
     margin: none !important;
     background: rgb(235,235,235);
+    border: 1px solid rgba(0,0,0,0.3);
+
 }
 
 .saveNameButton{
@@ -34,6 +39,7 @@
     height:30px;
     border: none;
     background: rgb(235,235,235);
+    border: 1px solid rgba(0,0,0,0.3);
 }
 
 .saveNameButton:hover{
