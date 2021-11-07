@@ -36,3 +36,38 @@
     transform: rotate(360deg);
   }
 }
+
+.navbar {
+  position: fixed;
+  top: 0;
+  z-index: 100000;
+  display: flex;
+  width: 100%;
+  height: 60px;
+}
+
+.navbar ul {
+  display: flex;
+  list-style: none;
+  width: 100%;
+  justify-content: center;
+}
+
+.navbar ul li {
+  margin: 0 2vw;
+  padding: 1rem;
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  color: rgb(31, 31, 31);
+  font-size: 1vw;
+  font-weight: 200;
+  font-family: 'Raleway', sans-serif;
+  letter-spacing: 0vw;
+
+}
+
+.navbar ul li a:hover {
+  font-weight: bold;
+}

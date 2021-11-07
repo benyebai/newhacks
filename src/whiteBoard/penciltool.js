@@ -14,8 +14,8 @@ class PencilTool extends React.Component {
         const canvas = document.querySelector(".canvas")
         const ctx = canvas.getContext('2d');
 
-        canvas.height = 400;
-        canvas.width = 400;
+        canvas.height = window.innerHeight;
+        canvas.width = window.innerWidth;
 
         let painting = false;
 
