@@ -6,6 +6,12 @@ import { Whiteblack } from './whiteblack/whiteblack';
 import {AllTasks} from "./taskStuff/allTasks"
 import Container from './whiteBoard/Container';
 
+chrome.runtime.onMessage.addListener(
+
+  alert("Unproductive tab! Please head back to your previous tab.")
+
+);
+
 
 export class App extends React.Component {
   constructor(props) {

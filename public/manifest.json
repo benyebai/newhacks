@@ -3,12 +3,14 @@
   "name": "Productivity App",
   "version": "1.0.0",
   "description": "big tree amogus",
-  "permissions": [ "tabs", "notifications"],
+  "permissions": [ "tabs", "notifications", "scripting", "activeTab "],
   "icons": {
     "16": "fav16.ico",
     "48": "fav48.ico",
     "128": "fav128.ico"
   },
+  "host_permissions": ["<all_urls>"],
+
 
   "chrome_url_overrides": {
     "newtab": "index.html"
@@ -17,4 +19,4 @@
   "background": {
     "service_worker": "background.js"
   }
-} 
+}
