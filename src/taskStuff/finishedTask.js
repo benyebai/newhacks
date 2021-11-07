@@ -1,7 +1,7 @@
 import React from 'react';
-import "./task.css";
+import "./task.css"
 
-export class Task extends React.Component{
+export class FinishedTask extends React.Component{
     constructor(props){
         super(props);
 
@@ -12,7 +12,7 @@ export class Task extends React.Component{
         this.handleClickOutside = this.handleClickOutside.bind(this);
         this.saveName = this.saveName.bind(this);
         this.deleteTask = this.deleteTask.bind(this);
-        this.finishTask = this.finishTask.bind(this);
+        this.unFinishTask = this.unFinishTask.bind(this);
 
         this.wrapperRef = React.createRef();
 
@@ -43,33 +43,33 @@ export class Task extends React.Component{
     }
 
     saveName(){
-        console.log(this.state.currentName)
-        var changed = this.props.parent.state.all;
-        changed[this.props.index] = this.state.currentName;
+        var changed = this.props.parent.state.finished;
+        changed[this.props.index - 10000] = this.state.currentName;
         this.props.parent.setState({
-            all : changed,
+            finished : changed,
             settingsActive : false
         });
     }
 
     deleteTask(){
-        let newTasks = this.props.parent.state.all;
-        newTasks.splice(this.props.index, 1);
-        this.props.parent.setState({all:newTasks, settingsActive : false});
+        let newTasks = this.props.parent.state.finished;
+        newTasks.splice(this.props.index - 10000, 1);
+        this.props.parent.setState({finished:newTasks, settingsActive : false});
     }
 
     handleClickOutside(event) {       
         if (this.wrapperRef && !this.wrapperRef.current.contains(event.target)) {
             //clicked outside
-            if(this.props.parent.state.whichActive == this.props.index){
+            if(this.props.parent.state.settingsActive && this.props.parent.state.whichActive == this.props.index){
+                console.log(this.props.taskName)
                 this.props.parent.setState({
                     settingsActive : false,
                 });
             }
         }
         else{
+            //clicked inside
             if(!this.props.parent.state.settingsActive){
-                //clicked inside
                 this.changeSettings()
                 this.setState({
                     currentName : this.props.taskName
@@ -78,16 +78,15 @@ export class Task extends React.Component{
         }
     }
 
-    finishTask(){
-        console.log("asd")
-        let newTasks = this.props.parent.state.all;
-        let toAdd = newTasks[this.props.index];
-        newTasks.splice(this.props.index, 1);
+    unFinishTask(){
+        let newTasks = this.props.parent.state.finished;
+        let toAdd = newTasks[this.props.index - 10000];
+        newTasks.splice(this.props.index - 10000, 1);
 
-        let finishedNew = this.props.parent.state.finished;
+        let finishedNew = this.props.parent.state.all;
         finishedNew.push(toAdd);
 
-        this.props.parent.setState({all:newTasks, settingsActive : false, finished:finishedNew});
+        this.props.parent.setState({all:finishedNew, settingsActive : false, finished:newTasks});
     }
 
     render(){
@@ -112,8 +111,8 @@ export class Task extends React.Component{
                     </div>
                     <div className = "sideButtons">
                         <div>
-                            <button onClick = {this.finishTask} className = "submitButton">
-                                finish task
+                            <button onClick = {this.unFinishTask} className = "submitButton">
+                                unfinish task
                             </button>
                         </div>
 
@@ -129,7 +128,7 @@ export class Task extends React.Component{
         else{
             return(
             <div className = "hypercool" ref = {this.wrapperRef}>
-                <h2 className='smaller'>{this.props.taskName}</h2>
+                <h2 className = "smaller">{this.props.taskName}</h2>
             </div>
             );
         }

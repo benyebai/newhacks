@@ -1,0 +1,50 @@
+.bar{
+    width:200px;
+    height:60px;
+    font-size:17px;
+    margin-left: none !important;
+    
+}
+
+.hypercool{
+    margin-top: 2vw;
+    margin-bottom: 2vw;
+    background: rgb(255, 255, 245);
+    padding:0.5vw;
+    box-shadow: 5px 6px rgba(0,0,0,0.1);
+    border: 1px solid rgba(0,0,0,0.3);
+
+}
+
+.smaller{
+    font-size: 1.5vw !important;
+    font-weight: 400;
+}
+
+.submitButton{
+    width:100px;
+    height:45px;
+    border:none;
+    margin: none !important;
+    background: rgb(235,235,235);
+}
+
+.saveNameButton{
+    width:200px;
+    height:30px;
+    border: none;
+    background: rgb(235,235,235);
+}
+
+.saveNameButton:hover{
+    background: rgb(215,215,215);
+}
+.submitButton:hover{
+    background: rgb(215,215,215);
+}
+
+.entireTaskBar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
